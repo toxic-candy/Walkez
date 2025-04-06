@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  web1:
+    build: .
+    container_name: walkez_backend_1
+    ports:
+      - "5001:5000"
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+
+  web2:
+    build: .
+    container_name: walkez_backend_2
+    ports:
+      - "5002:5000"
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+
+volumes:
+  postgres_data:
